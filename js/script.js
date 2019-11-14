@@ -9,6 +9,7 @@
 $("#shoot").click(function(){
     let userChoice = $('#input').val();
     userChoice = userChoice.toLowerCase();
+    var numWins = 0;
 
     if(userChoice == "rock" || userChoice == "paper" || userChoice == "scissors"){
         let compNum = Math.random();
@@ -30,22 +31,26 @@ $("#shoot").click(function(){
         if(userChoice == compChoice){
           alert("IT'S A TIE!!!");
         } else if (userChoice == "rock" && compChoice == "paper"){
-          alert("THE COMPUTER WINS!! IT'S THE END OF THE WORLD! :(. DO better next time to save humanity");
+          alert("THE COMPUTER WINS!! IT'S THE END OF THE WORLD! :(. Do better next time to save humanity");
         } else if(userChoice == "rock" && compChoice == "scissors"){
-          alert("You were able to defeat the robot and save humanity. YOu live to fight another day :^)");
+          alert("You were able to defeat the robot and save humanity. You live to fight another day :^)");
+          numWins++;
         } else if(userChoice == "paper" && compChoice == "rock"){
-          alert("You were able to defeat the robot and save humanity. YOu live to fight another day :^)");
+          alert("You were able to defeat the robot and save humanity. You live to fight another day :^)");
+          numWins++;
         } else if(userChoice == "paper" && compChoice == "scissors"){
-          alert("THE COMPUTER WINS!! IT'S THE END OF THE WORLD! :(. DO better next time to save humanity");
+          alert("THE COMPUTER WINS!! IT'S THE END OF THE WORLD! :(. Do better next time to save humanity");
         } else if(userChoice == "scissors" && compChoice == "rock"){
-          alert("THE COMPUTER WINS!! IT'S THE END OF THE WORLD! :(. DO better next time to save humanity");
+          alert("THE COMPUTER WINS!! IT'S THE END OF THE WORLD! :(. Do better next time to save humanity");
         } else if(userChoice == "scissors" && compChoice == "paper"){
-          alert("You were able to defeat the robot and save humanity. YOu live to fight another day :^)");
+          alert("You were able to defeat the robot and save humanity. You live to fight another day :^)");
+          numWins++;
         }
     } else{
         console.log("got here", userChoice);
         alert("That is not a valid input!!");
     }
+    $("#num").text(numWins);
 });
 
 
